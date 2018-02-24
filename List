@@ -1,0 +1,38 @@
+# List Operations
+list = ["Sumit","Ravi","KGS","RS","XYZ","DSK","SK","AJ","PR","LS"]
+print(list)
+print("Length of the list is: ", len(list))
+list.append("ABC")
+print(list)
+list[4] = "PS"  # Change a particular element
+#List Slicing 
+print(list[:2]) # 2 elements, the one at 0th position nad the one at 1st position. Till 2, not inclusive of 2
+print(list[3:])
+print(list[3:5])
+print(list[::-1]) # Reverse the list
+#Delete an element
+list[4:5] = []
+print(list)
+print(len(list))
+print(list[len(list)-1]) # To get the last elemet
+#Deletes the list completely
+list[:] = []
+print(list)
+#######################################################################################
+# Do Selection Sort #Refernce Avinas, learnpyton.com
+def selection_sort(sort_list):
+    for j in range(len(sort_list)):
+        smallest_element = min(sort_list[j:])
+        index = sort_list.index(smallest_element)
+        sort_list[j], sort_list[index] = sort_list[index], sort_list[j]
+        print("PASS", j, sort_list )
+    print(sort_list)
+
+lst = []
+size = int(input("Enter the size of the list: "))
+
+for i in range(size):
+    elements = int(input("Enter element number:"))
+    lst.append(elements)
+    
+selection_sort(lst)
